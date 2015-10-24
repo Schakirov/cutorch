@@ -53,7 +53,7 @@ FUNCTION(DETECT_INSTALLED_GPUS OUT_VARIABLE)
   ENDIF()
 
   IF(NOT CUDA_GPU_DETECT_OUTPUT)
-    message(STATUS "Automatic GPU detection failed. Building for all known architectures.")
+    message(STATUS "Automatic GPU detection failed. Building for all known architectures except 5.0.")
     SET(${OUT_VARIABLE} ${KNOWN_GPU_ARCHITECTURES} PARENT_SCOPE)
   ELSE()
     SET(${OUT_VARIABLE} ${CUDA_GPU_DETECT_OUTPUT} PARENT_SCOPE)
